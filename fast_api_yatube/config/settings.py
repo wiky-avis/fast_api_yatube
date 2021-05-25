@@ -118,4 +118,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ACCESS_TOKEN_EXPIRE_MINUTES = 5
+ACCESS_TOKEN_EXPIRE_MINUTES = 60

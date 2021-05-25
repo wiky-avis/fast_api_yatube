@@ -28,9 +28,9 @@ class Post(Schema):
 class CreateComment(Schema):
     post_id: int = None
     text: str
-    created: datetime
 
 
 class Comment(CreateComment):
     id: int
     author_id: int = None
+    created: datetime
