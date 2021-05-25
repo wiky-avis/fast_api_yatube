@@ -42,26 +42,26 @@ GET http://localhost:8000/group
 
 ###
 
-GET http://localhost:8000/group/1/posts
+GET http://localhost:8000/group/5/posts
 
 ###
 
 POST http://localhost:8000/group
 Content-Type: application/json
-Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTE2OTIsInN1YiI6ImFjY2VzcyJ9.yxkNHYDS5dK0rAUMaqiGLoKqIUVGNtNQT29YgemlI8s
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTUwMDEsInN1YiI6ImFjY2VzcyJ9.SoVh1UAApXBWgml6ADxPVVki86sJSn6wztuAteVAblo
 
 {
-    "title": "Group 2"
+    "title": "Group 3"
 }
 
 ###
 
 PUT http://localhost:8000/group/5
 Content-Type: application/json
-Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTE2OTIsInN1YiI6ImFjY2VzcyJ9.yxkNHYDS5dK0rAUMaqiGLoKqIUVGNtNQT29YgemlI8s
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTUwMDEsInN1YiI6ImFjY2VzcyJ9.SoVh1UAApXBWgml6ADxPVVki86sJSn6wztuAteVAblo
 
 {
-    "title": "California"
+    "title": "California 2"
 }
 
 ###
@@ -69,5 +69,39 @@ Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJle
 DELETE http://localhost:8000/group/4
 Content-Type: application/json
 Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTE2OTIsInN1YiI6ImFjY2VzcyJ9.yxkNHYDS5dK0rAUMaqiGLoKqIUVGNtNQT29YgemlI8s
+
+###
+
+GET http://localhost:8000/post
+Content-Type: application/json
+
+###
+
+POST http://localhost:8000/post
+Content-Type: application/json
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTUwMDEsInN1YiI6ImFjY2VzcyJ9.SoVh1UAApXBWgml6ADxPVVki86sJSn6wztuAteVAblo
+
+{
+    "text": "Otlichnij deni progulki 0000",
+    "image": "string 111",
+    "group_id": 5
+}
+
+###
+
+PUT http://localhost:8000/post/6
+Content-Type: application/json
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTUwMDEsInN1YiI6ImFjY2VzcyJ9.SoVh1UAApXBWgml6ADxPVVki86sJSn6wztuAteVAblo
+
+{
+    "text": "Otlichnij deni progulki123",
+    "image": "string123"
+}
+
+###
+
+DELETE http://localhost:8000/post/6
+Content-Type: application/json
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTUwMDEsInN1YiI6ImFjY2VzcyJ9.SoVh1UAApXBWgml6ADxPVVki86sJSn6wztuAteVAblo
 
 ###

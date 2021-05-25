@@ -35,7 +35,7 @@ def update_group(request, group_id: int, group: schemas.CreateGroup):
 
 
 @posts.delete('/group/{group_id}', auth=AuthBearer())
-def delete_comment(request, group_id: int):
+def delete_group(request, group_id: int):
     _group = get_object_or_404(
         models.Group, id=group_id)
     _group.delete()
@@ -47,9 +47,33 @@ def get_posts(request):
     return models.Post.objects.all()
 
 
+@posts.post('/post', response=schemas.Post, auth=AuthBearer())
+def create_post(request, post: schemas.CreatePost):
+    return models.Post.objects.create(author=request.auth, **post.dict())
+
+
 @posts.get('/post/{post_pk}', response=schemas.Post)
 def get_post(request, post_pk: int):
     return get_object_or_404(models.Post, id=post_pk)
+
+
+@posts.put('/post/{post_pk}', response=schemas.Post, auth=AuthBearer())
+def update_post(request, post_pk: int, post: schemas.CreatePost):
+    _post = get_object_or_404(
+        models.Post, id=post_pk, author=request.auth)
+    _post.text = post.text
+    _post.group = post.group_id
+    _post.image = post.image
+    _post.save()
+    return _post
+
+
+@posts.delete('/post/{post_pk}', auth=AuthBearer())
+def delete_post(request, post_pk: int):
+    _post = get_object_or_404(
+        models.Post, id=post_pk, author=request.auth)
+    _post.delete()
+    return {'success': 204}
 
 
 @posts.get('/{post_id}/comment', response=List[schemas.Comment])
@@ -75,8 +99,7 @@ def update_comment(request, comment_id: int, comment: schemas.CreateComment):
     return _comment
 
 
-@posts.delete(
-    '/{post_id}/comment/{comment_id}', auth=AuthBearer())
+@posts.delete('/{post_id}/comment/{comment_id}', auth=AuthBearer())
 def delete_comment(request, comment_id: int):
     _comment = get_object_or_404(
         models.Comment, id=comment_id, author=request.auth)

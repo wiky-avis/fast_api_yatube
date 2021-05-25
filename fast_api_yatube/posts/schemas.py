@@ -19,13 +19,16 @@ class Group(CreateGroup):
     id: int
 
 
-class Post(Schema):
-    id: int
+class CreatePost(Schema):
     text: str
+    image: str = None
+    group_id: int = None
+
+
+class Post(CreatePost):
+    id: int
     pub_date: datetime
     author: UserN
-    image: str
-    group: Group
 
 
 class CreateComment(Schema):
