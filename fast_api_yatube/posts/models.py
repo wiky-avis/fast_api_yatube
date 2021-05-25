@@ -1,7 +1,5 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.db import models
-
-User = get_user_model()
 
 
 class Group(models.Model):
@@ -44,7 +42,7 @@ class Comment(models.Model):
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments'
     )
-    text = models.TextField()
+    text = models.TextField('Комментарий', default='')
     created = models.DateTimeField(
         'Дата добавления', auto_now_add=True, db_index=True
     )

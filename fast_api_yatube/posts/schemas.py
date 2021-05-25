@@ -5,6 +5,7 @@ from ninja import Schema
 
 User = get_user_model()
 
+
 class UserN(Schema):
     id: int
     username: str
@@ -24,9 +25,12 @@ class Post(Schema):
     group: Group
 
 
-class Comment(Schema):
-    id: int
+class CreateComment(Schema):
     author_id: int = None
     post_id: int = None
     text: str
     created: datetime
+
+
+class Comment(CreateComment):
+    id: int
