@@ -9,7 +9,6 @@ from ninja.security import HttpBearer
 from auth.schemas import TokenPayload
 from config import settings
 
-
 ALGORITHM = "HS256"
 access_token_jwt_subject = "access"
 

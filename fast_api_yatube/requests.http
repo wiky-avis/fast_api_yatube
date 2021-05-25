@@ -12,31 +12,62 @@ GET http://localhost:8000/1/comment
 
 ###
 
-POST http://localhost:8000/comment
+POST http://localhost:8000/1/comment
 Content-Type: application/json
-Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NDMzMzQsInN1YiI6ImFjY2VzcyJ9.XeX7S_D_lHPICbfP2bqQCEAxmvtmZg1zsi0N-kye9JY
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NDg5ODMsInN1YiI6ImFjY2VzcyJ9.bCKxXwNb8pIss20FsvnqYbMSL7Lh9eOApxukCy4JY3Y
 
 {
-    "post_id": 1,
-    "text": "string555500111",
-    "created": "2021-05-25T10:15:45.225Z"
+    "text": "Новый коммент 3"
 }
 
 ###
 
-PUT http://localhost:8000/comment/1
+PUT http://localhost:8000/1/comment/14
 Content-Type: application/json
-Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NDgzODIsInN1YiI6ImFjY2VzcyJ9.gxgUyf2L1XdYXprNgF0n0MEJ2PUrunU9rAS2fP_ZAoY
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NDg5ODMsInN1YiI6ImFjY2VzcyJ9.bCKxXwNb8pIss20FsvnqYbMSL7Lh9eOApxukCy4JY3Y
 
 {
-    "post_id": 1,
-    "text": "string111"
+    "text": "cool"
 }
 
 ###
 
-DELETE http://localhost:8000/comment/3
+DELETE http://localhost:8000/1/comment/17
 Content-Type: application/json
 Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NDgzODIsInN1YiI6ImFjY2VzcyJ9.gxgUyf2L1XdYXprNgF0n0MEJ2PUrunU9rAS2fP_ZAoY
+
+###
+
+GET http://localhost:8000/group
+
+###
+
+GET http://localhost:8000/group/1/posts
+
+###
+
+POST http://localhost:8000/group
+Content-Type: application/json
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTE2OTIsInN1YiI6ImFjY2VzcyJ9.yxkNHYDS5dK0rAUMaqiGLoKqIUVGNtNQT29YgemlI8s
+
+{
+    "title": "Group 2"
+}
+
+###
+
+PUT http://localhost:8000/group/5
+Content-Type: application/json
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTE2OTIsInN1YiI6ImFjY2VzcyJ9.yxkNHYDS5dK0rAUMaqiGLoKqIUVGNtNQT29YgemlI8s
+
+{
+    "title": "California"
+}
+
+###
+
+DELETE http://localhost:8000/group/4
+Content-Type: application/json
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5NTE2OTIsInN1YiI6ImFjY2VzcyJ9.yxkNHYDS5dK0rAUMaqiGLoKqIUVGNtNQT29YgemlI8s
 
 ###

@@ -11,9 +11,12 @@ class UserN(Schema):
     username: str
 
 
-class Group(Schema):
-    id: int
+class CreateGroup(Schema):
     title: str
+
+
+class Group(CreateGroup):
+    id: int
 
 
 class Post(Schema):
@@ -26,11 +29,11 @@ class Post(Schema):
 
 
 class CreateComment(Schema):
-    post_id: int = None
     text: str
 
 
 class Comment(CreateComment):
     id: int
+    post_id: int = None
     author_id: int = None
     created: datetime
