@@ -1,17 +1,13 @@
-import jwt
-from jwt import PyJWTError
+from datetime import datetime, timedelta
 
+import jwt
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
-
-from datetime import datetime, timedelta
+from jwt import PyJWTError
 from ninja.security import HttpBearer
 
-from config import settings
-
 from auth.schemas import TokenPayload
-
-from django.contrib.auth.models import User
+from config import settings
 
 
 ALGORITHM = "HS256"

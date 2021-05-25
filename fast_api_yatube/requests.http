@@ -1,0 +1,25 @@
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+###
+
+GET http://localhost:8000/1/comment
+
+###
+
+POST http://localhost:8000/comment
+Content-Type: application/json
+Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MjE5Mzg2MDIsInN1YiI6ImFjY2VzcyJ9.3kEWh2SJLitW--RLOdN-9JdbidCfWONEbcnHdXnkBoE
+
+{
+    "post_id": 1,
+    "text": "string555500",
+    "created": "2021-05-25T10:15:45.225Z"
+}
+
+###

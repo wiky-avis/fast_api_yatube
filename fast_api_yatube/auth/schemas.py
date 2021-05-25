@@ -4,4 +4,4 @@ from ninja import Schema
 class TokenPayload(Schema):
     """ Схема для
     """
-    id: int = None
+    user_id: int = None

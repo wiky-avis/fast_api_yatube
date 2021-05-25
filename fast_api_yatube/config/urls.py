@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from posts.views import posts
-from auth.views import api_auth
 from ninja import NinjaAPI
+
+from auth.views import api_auth
+from posts.views import posts
 
 api = NinjaAPI()
 
