@@ -1,9 +1,7 @@
 from datetime import datetime
 
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from ninja import Schema
-
-User = get_user_model()
 
 
 class UserN(Schema):
