@@ -1,5 +1,5 @@
 asgiref==3.3.4
-Django==3.2.3
+Django==3.2.12
 django-ninja==0.13.0
 flake8==3.9.2
 mccabe==0.6.1
